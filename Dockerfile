@@ -8,6 +8,6 @@ RUN \
   bash setup-nodejs && \
   apt-get install -y nodejs build-essential
 
-RUN npm install -g bower gulp
+RUN npm install -g bower gulp-cli
 
 RUN apt-get install -y gettext zip
