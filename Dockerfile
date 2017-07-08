@@ -1,5 +1,6 @@
 FROM python:2.7
 
+RUN echo "deb http://http.debian.net/debian wheezy main" > /etc/apt/sources.list
 RUN \
   apt-get update && \
   apt-get install -y curl apt-transport-https ca-certificates && \
@@ -7,8 +8,6 @@ RUN \
   bash setup-nodejs && \
   apt-get install -y nodejs build-essential
 
-RUN /usr/local/bin/npm install -g bower gulp
-
-RUN echo "deb http://http.debian.net/debian wheezy main" > /etc/apt/sources.list
+RUN npm install -g bower gulp
 
 RUN apt-get install -y gettext zip
